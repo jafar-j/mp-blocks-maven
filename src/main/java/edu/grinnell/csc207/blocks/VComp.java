@@ -87,8 +87,8 @@ public class VComp implements AsciiBlock {
         prevCeiling += block.height();
       } // end for
       return "";
-    }
-  } // row(int)
+    } // end if
+  } // end row(int)
 
   /**
    * Determine how many rows are in the block.
@@ -114,8 +114,8 @@ public class VComp implements AsciiBlock {
       int blockWidth = block.width();
       if (blockWidth > width) {
         width = blockWidth;
-      }
-    }
+      } // end if
+    } // end for
     return width;
   } // width()
 

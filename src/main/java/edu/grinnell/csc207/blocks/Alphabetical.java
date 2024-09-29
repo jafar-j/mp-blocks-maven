@@ -1,5 +1,6 @@
 package edu.grinnell.csc207.blocks;
 
+/** Generate alphabetically filled block of giver dimensions.*/
 public class Alphabetical {
   // +--------+------------------------------------------------------------
   // | Fields |

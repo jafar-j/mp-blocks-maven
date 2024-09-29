@@ -25,7 +25,7 @@ public class Surrounded implements AsciiBlock {
    * Build a new block with the specified contents.
    *
    * @param blockContents The contents of the block.
-   * @param theChar       The character that we use to surround the block.
+   * @param theChar The character that we use to surround the block.
    */
   public Surrounded(AsciiBlock blockContents, char theChar) {
     this.contents = blockContents;
@@ -48,9 +48,9 @@ public class Surrounded implements AsciiBlock {
       throw new Exception("Invalid row");
     } else if (i == 0 || i == this.height() - 1) {
       return surroundChar.repeat(this.width());
-    } else{
-      return this.surroundChar + contents.row(i-1) + this.surroundChar;
-    }
+    } else {
+      return this.surroundChar + contents.row(i - 1) + this.surroundChar;
+    } // end if
   } // row(int)
 
   /**
@@ -75,12 +75,11 @@ public class Surrounded implements AsciiBlock {
    * Determine if another block is structurally equivalent to this block.
    *
    * @param other The block to compare to this block.
-   * @return true if the two blocks are structurally equivalent and false
-   *         otherwise.
+   * @return true if the two blocks are structurally equivalent and false otherwise.
    */
   public boolean eqv(AsciiBlock other) {
     return (other instanceof Surrounded)
-      && (this.contents.eqv(((Surrounded) other).contents))
-      && (this.surroundChar.equals(((Surrounded) other).surroundChar));
+        && (this.contents.eqv(((Surrounded) other).contents))
+        && (this.surroundChar.equals(((Surrounded) other).surroundChar));
   } // eqv(AsciiBlock)
 } // class Surrounded

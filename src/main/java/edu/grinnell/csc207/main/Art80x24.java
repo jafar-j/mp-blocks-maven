@@ -1,7 +1,10 @@
 package edu.grinnell.csc207.main;
 
 import edu.grinnell.csc207.blocks.AsciiBlock;
+import edu.grinnell.csc207.blocks.Boxed;
+import edu.grinnell.csc207.blocks.Grid;
 import edu.grinnell.csc207.blocks.Rect;
+import edu.grinnell.csc207.blocks.Surrounded;
 
 import java.io.PrintWriter;
 
@@ -24,7 +27,9 @@ public class Art80x24 {
   public static void main(String[] args) throws Exception {
     PrintWriter pen = new PrintWriter(System.out, true);
     AsciiBlock art = new Rect('^', 80, 24);
-    AsciiBlock.print(pen, art);
+    AsciiBlock star = new Boxed(new Rect('*', 1, 1)) ;
+    AsciiBlock flagCorner = new Grid(star, 4,3);
+    AsciiBlock.print(pen, flagCorner);
     pen.close();
   } // main(String[])
 } // class Art80x24

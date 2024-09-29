@@ -23,8 +23,8 @@ public class Rect implements AsciiBlock {
   /**
    * Build a rectangle.
    *
-   * @param ch         The character from which we build the rectangle.
-   * @param rectWidth  The width of the rectangle.
+   * @param ch The character from which we build the rectangle.
+   * @param rectWidth The width of the rectangle.
    * @param rectHeight The height of the rectangle.
    */
   public Rect(char ch, int rectWidth, int rectHeight) throws Exception {
@@ -36,7 +36,7 @@ public class Rect implements AsciiBlock {
     } // if/else
     // Set up the fields
     this.height = rectHeight;
-    this.row = new String(new char[] { ch }).repeat(rectWidth);
+    this.row = new String(new char[] {ch}).repeat(rectWidth);
   } // Rect(String)
 
   // +--------------------+------------------------------------------
@@ -79,13 +79,12 @@ public class Rect implements AsciiBlock {
    * Determine if another block is structurally equivalent to this block.
    *
    * @param other The block to compare to this block.
-   * @return true if the two blocks are structurally equivalent and false
-   *         otherwise.
+   * @return true if the two blocks are structurally equivalent and false otherwise.
    */
   public boolean eqv(AsciiBlock other) {
     return (other instanceof Rect)
-      && (this.row.equals(((Rect) other).row))
-      && (this.height == ((Rect) other).height);
+        && (this.row.equals(((Rect) other).row))
+        && (this.height == ((Rect) other).height);
   } // eqv(AsciiBlock)
 
   // +---------------+-----------------------------------------------

@@ -13,14 +13,10 @@ public class HComp implements AsciiBlock {
   // | Fields |
   // +--------+
 
-  /**
-   * The blocks.
-   */
+  /** The blocks. */
   AsciiBlock[] blocks;
 
-  /**
-   * How the blocks are aligned.
-   */
+  /** How the blocks are aligned. */
   VAlignment align;
 
   // +--------------+------------------------------------------------------
@@ -30,15 +26,11 @@ public class HComp implements AsciiBlock {
   /**
    * Build a horizontal composition of two blocks.
    *
-   * @param alignment
-   *   The way in which the blocks should be aligned.
-   * @param leftBlock
-   *   The block on the left.
-   * @param rightBlock
-   *   The block on the right.
+   * @param alignment The way in which the blocks should be aligned.
+   * @param leftBlock The block on the left.
+   * @param rightBlock The block on the right.
    */
-  public HComp(VAlignment alignment, AsciiBlock leftBlock,
-      AsciiBlock rightBlock) {
+  public HComp(VAlignment alignment, AsciiBlock leftBlock, AsciiBlock rightBlock) {
     this.align = alignment;
     this.blocks = new AsciiBlock[] {leftBlock, rightBlock};
   } // HComp(VAlignment, AsciiBlock, AsciiBlock)
@@ -46,10 +38,8 @@ public class HComp implements AsciiBlock {
   /**
    * Build a horizontal composition of multiple blocks.
    *
-   * @param alignment
-   *   The alignment of the blocks.
-   * @param blocksToCompose
-   *   The blocks we will be composing.
+   * @param alignment The alignment of the blocks.
+   * @param blocksToCompose The blocks we will be composing.
    */
   public HComp(VAlignment alignment, AsciiBlock[] blocksToCompose) {
     this.align = alignment;
@@ -64,11 +54,8 @@ public class HComp implements AsciiBlock {
    * Get one row from the block.
    *
    * @param i the number of the row
-   *
    * @return row i.
-   *
-   * @exception Exception
-   *   if i is outside the range of valid rows.
+   * @exception Exception if i is outside the range of valid rows.
    */
   public String row(int i) throws Exception {
     // Finding max height of composition.
@@ -81,19 +68,19 @@ public class HComp implements AsciiBlock {
 
       for (AsciiBlock block : blocks) {
         int padding = 0;
-        if (align == VAlignment.CENTER){
-          padding = (height - block.height())/2;
-        } else if  (align == VAlignment.BOTTOM){
+        if (align == VAlignment.CENTER) {
+          padding = (height - block.height()) / 2;
+        } else if (align == VAlignment.BOTTOM) {
           padding = height - block.height();
-        }
+        } // end if
 
-        if (i < padding || i >= (padding + block.height())){
+        if (i < padding || i >= (padding + block.height())) {
           returnRow += " ".repeat(block.width());
-        } else{
-          returnRow += block.row(i-padding);
-        }
-      }
-    }
+        } else {
+          returnRow += block.row(i - padding);
+        } // end if
+      } // end for
+    } // end if
     return returnRow;
   } // row(int)
 
@@ -105,7 +92,7 @@ public class HComp implements AsciiBlock {
   public int height() {
     int maxHeight = blocks[0].height();
     for (int i = 0; i < blocks.length; i++) {
-      if(blocks[i].height() > maxHeight) {
+      if (blocks[i].height() > maxHeight) {
         maxHeight = blocks[i].height();
       } // if
     } // for
@@ -128,11 +115,8 @@ public class HComp implements AsciiBlock {
   /**
    * Determine if another block is structurally equivalent to this block.
    *
-   * @param other
-   *   The block to compare to this block.
-   *
-   * @return true if the two blocks are structurally equivalent and
-   *    false otherwise.
+   * @param other The block to compare to this block.
+   * @return true if the two blocks are structurally equivalent and false otherwise.
    */
   public boolean eqv(AsciiBlock other) {
     if (!(other instanceof HComp)) {
