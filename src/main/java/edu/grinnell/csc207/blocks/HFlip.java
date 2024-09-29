@@ -11,9 +11,7 @@ public class HFlip implements AsciiBlock {
   // | Fields |
   // +--------+
 
-  /**
-   * The original block.
-   */
+  /** The original block. */
   AsciiBlock block;
 
   // +--------------+------------------------------------------------------
@@ -23,8 +21,7 @@ public class HFlip implements AsciiBlock {
   /**
    * Build a new block with the specified contents.
    *
-   * @param original
-   *   The original block.
+   * @param original The original block.
    */
   public HFlip(AsciiBlock original) {
     this.block = original;
@@ -38,18 +35,21 @@ public class HFlip implements AsciiBlock {
    * Get one row from the block.
    *
    * @param i the number of the row
-   *
    * @return row i.
-   *
-   * @exception Exception
-   *   If the row is invalid.
+   * @exception Exception If the row is invalid.
    */
   public String row(int i) throws Exception {
-    int height = this.height();
-    if (i < 0 || i > height - 1){
-      throw new Exception("Invalid row."); // STUB
+    int height = block.height();
+    if (i < 0 || i > height - 1) {
+      throw new Exception("Invalid row");
     } else {
-      return block.row(height - 1 - i);
+
+      String returnRow = "";
+      String blockRow = block.row(i);
+      for (int j = 0; j < block.width(); j++) {
+        returnRow = blockRow.charAt(j) + returnRow;
+      }
+      return returnRow;
     }
   } // row(int)
 
@@ -74,13 +74,12 @@ public class HFlip implements AsciiBlock {
   /**
    * Determine if another block is structurally equivalent to this block.
    *
-   * @param other
-   *   The block to compare to this block.
-   *
-   * @return true if the two blocks are structurally equivalent and
-   *    false otherwise.
+   * @param other The block to compare to this block.
+   * @return true if the two blocks are structurally equivalent and false otherwise.
    */
   public boolean eqv(AsciiBlock other) {
-    return  (other instanceof AsciiBlock) && other.width() == this.width() && other.height() == this.height();
+    return (other instanceof AsciiBlock)
+        && other.width() == this.width()
+        && other.height() == this.height();
   } // eqv(AsciiBlock)
 } // class HFlip

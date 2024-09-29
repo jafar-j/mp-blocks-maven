@@ -65,10 +65,10 @@ public class VComp implements AsciiBlock {
     } else {
       int curFloor = 0;
       int curCeiling = 0;
-      int prevFloor = 0;
+      int prevCeiling = 0;
       for (AsciiBlock block : blocks) {
-        curFloor += prevFloor;
-        curCeiling += prevFloor + block.height();
+        curFloor = prevCeiling;
+        curCeiling = prevCeiling + block.height();
         if (curFloor <= i && i < curCeiling) {
           int blockIndex = i - curFloor;
           int width = this.width();
@@ -84,7 +84,7 @@ public class VComp implements AsciiBlock {
             return " ".repeat(padding) + block.row(blockIndex);
           } // end if
         } // end if
-        prevFloor += block.height();
+        prevCeiling += block.height();
       } // end for
       return "";
     }
@@ -98,7 +98,7 @@ public class VComp implements AsciiBlock {
   public int height() {
     int height = 0;
     for (AsciiBlock block : blocks) {
-      height +=  block.height();
+      height += block.height();
     } // end for
     return height;
   } // height()
@@ -112,7 +112,7 @@ public class VComp implements AsciiBlock {
     int width = 0;
     for (AsciiBlock block : blocks) {
       int blockWidth = block.width();
-      if (blockWidth > width ){
+      if (blockWidth > width) {
         width = blockWidth;
       }
     }
@@ -126,6 +126,6 @@ public class VComp implements AsciiBlock {
    * @return true if the two blocks are structurally equivalent and false otherwise.
    */
   public boolean eqv(AsciiBlock other) {
-    return (other instanceof VComp) && this.equals((VComp)other);
+    return (other instanceof VComp) && this.equals((VComp) other);
   } // eqv(AsciiBlock)
 } // class VComp

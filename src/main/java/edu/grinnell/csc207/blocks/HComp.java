@@ -82,9 +82,9 @@ public class HComp implements AsciiBlock {
       for (AsciiBlock block : blocks) {
         int padding = 0;
         if (align == VAlignment.CENTER){
-          padding = (block.height() - height)/2;
+          padding = (height - block.height())/2;
         } else if  (align == VAlignment.BOTTOM){
-          padding = block.height() - height;
+          padding = height - block.height();
         }
 
         if (i < padding || i >= (padding + block.height())){
