@@ -86,7 +86,7 @@ public class Padded implements AsciiBlock {
    *   If the row is invalid.
    */
   public String row(int i) throws Exception {
-    throw new Exception("Not yet implemented"); // STUB
+    throw new Exception("Not yet implemented");
   } // row(int)
 
   /**
@@ -95,7 +95,7 @@ public class Padded implements AsciiBlock {
    * @return the number of rows
    */
   public int height() {
-    return 0;   // STUB
+    return height;
   } // height()
 
   /**
@@ -104,7 +104,7 @@ public class Padded implements AsciiBlock {
    * @return the number of columns
    */
   public int width() {
-    return 0;   // STUB
+    return width;
   } // width()
 
   /**

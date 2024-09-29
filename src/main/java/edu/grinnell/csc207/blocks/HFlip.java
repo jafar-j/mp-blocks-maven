@@ -77,7 +77,8 @@ public class HFlip implements AsciiBlock {
    * @return true if the two blocks are structurally equivalent and false otherwise.
    */
   public boolean eqv(AsciiBlock other) {
-    return (other instanceof AsciiBlock)
+    return (other instanceof HFlip)
+        && (this.block.eqv(((HFlip)other).block))
         && other.width() == this.width()
         && other.height() == this.height();
   } // eqv(AsciiBlock)

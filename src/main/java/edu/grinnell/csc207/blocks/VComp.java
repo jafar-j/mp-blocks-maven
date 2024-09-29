@@ -130,6 +130,8 @@ public class VComp implements AsciiBlock {
       return false;
     } else if (this.blocks.length != ((VComp) other).blocks.length) {
       return false;
+    } else if (this.align != (((VComp) other).align)) {
+      return false;
     } // if
     for (int i = 0; i < this.blocks.length; i++) {
       if (!(this.blocks[i].eqv(((VComp) other).blocks[i]))) {
