@@ -119,5 +119,4 @@ public class Alphabetical {
    public char getLetter (int index) {
     return ((char)(index + VALUE_OF_BIG_A));
    } // getLetter(int)
-
-}
+} // class Alphabetical
