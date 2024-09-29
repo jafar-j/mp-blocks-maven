@@ -27,9 +27,9 @@ public class Art80x24 {
     PrintWriter pen = new PrintWriter(System.out, true);
 
     AsciiBlock star = new Boxed(new Rect('*', 1, 1));
-    AsciiBlock flagCorner = new Grid(star, 4, 3);
-    AsciiBlock redStarLine = new Grid(new Rect('R', 1, 1), 56, 3);
-    AsciiBlock whiteStarLine = new Grid(new Rect('W', 1, 1), 56, 3);
+    AsciiBlock flagCorner = new Grid(star, 5, 3);
+    AsciiBlock redStarLine = new Grid(new Rect('R', 1, 1), 65, 3);
+    AsciiBlock whiteStarLine = new Grid(new Rect('W', 1, 1), 65, 3);
     AsciiBlock fullRedStarLine = new Grid(new Rect('R', 1, 1), 80, 3);
     AsciiBlock fullWhiteStarLine = new Grid(new Rect('W', 1, 1), 80, 3);
     AsciiBlock starStripes =
