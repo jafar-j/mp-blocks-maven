@@ -117,6 +117,11 @@ public class Padded implements AsciiBlock {
    *    false otherwise.
    */
   public boolean eqv(AsciiBlock other) {
-    return false;       // STUB
+    return (other instanceof Padded)
+      && (this.pad.equals(((Padded) other).pad))
+      && (this.halign.equals(((Padded) other).halign))
+      && (this.valign.equals(((Padded) other).valign))
+      && (this.width == (((Padded) other).width))
+      && (this.height == (((Padded) other).height));
   } // eqv(AsciiBlock)
 } // class Padded

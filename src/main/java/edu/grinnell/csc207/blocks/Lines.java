@@ -111,6 +111,16 @@ public class Lines implements AsciiBlock {
    *    false otherwise.
    */
   public boolean eqv(AsciiBlock other) {
-    return false;       // STUB
+    if (!(other instanceof Lines)) {
+      return false;
+    } else if (this.lines.length != ((Lines) other).lines.length) {
+      return false;
+    } // if
+    for (int i = 0; i < this.lines.length; i++) {
+      if (!(this.lines[i].equals(((Lines) other).lines[i]))) {
+        return false;
+      } // if
+    } // for
+    return true;
   } // eqv(AsciiBlock)
 } // class Lines

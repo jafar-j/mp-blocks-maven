@@ -126,6 +126,16 @@ public class VComp implements AsciiBlock {
    * @return true if the two blocks are structurally equivalent and false otherwise.
    */
   public boolean eqv(AsciiBlock other) {
-    return (other instanceof VComp) && this.equals((VComp) other);
+    if (!(other instanceof VComp)) {
+      return false;
+    } else if (this.blocks.length != ((VComp) other).blocks.length) {
+      return false;
+    } // if
+    for (int i = 0; i < this.blocks.length; i++) {
+      if (!(this.blocks[i].eqv(((VComp) other).blocks[i]))) {
+        return false;
+      } // if
+    } // for
+    return true;
   } // eqv(AsciiBlock)
 } // class VComp

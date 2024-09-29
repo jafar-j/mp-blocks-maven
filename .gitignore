@@ -12,7 +12,7 @@
 *.war
 *.nar
 *.ear
-*.zip
+*.zipcd
 *.tar.gz
 *.rar
 
@@ -33,3 +33,4 @@ target
 # Strange macOS files
 .DS_Store
 
+shared

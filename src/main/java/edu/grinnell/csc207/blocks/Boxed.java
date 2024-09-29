@@ -88,7 +88,7 @@ public class Boxed implements AsciiBlock {
    * @return true if the two blocks are structurally equivalent and false otherwise.
    */
   public boolean eqv(AsciiBlock other) {
-    return false; // STUB
+    return ((other instanceof Boxed) && (this.eqv((Boxed) other)));
   } // eqv(AsciiBlock)
 
   /**
