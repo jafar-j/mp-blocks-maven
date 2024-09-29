@@ -46,11 +46,11 @@ public class VFlip implements AsciiBlock {
    */
   public String row(int i) throws Exception {
     int height = this.height();
-    if (i < 0 || i > height - 1){
-      throw new Exception("Invalid row."); // STUB
+    if (i < 0 || i > height - 1) {
+      throw new Exception("Invalid row.");
     } else {
       return block.row(height - 1 - i);
-    }
+    } // if
   } // row(int)
 
   /**

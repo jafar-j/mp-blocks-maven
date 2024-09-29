@@ -43,14 +43,13 @@ public class HFlip implements AsciiBlock {
     if (i < 0 || i > height - 1) {
       throw new Exception("Invalid row");
     } else {
-
       String returnRow = "";
       String blockRow = block.row(i);
       for (int j = 0; j < block.width(); j++) {
         returnRow = blockRow.charAt(j) + returnRow;
-      }
+      } // for
       return returnRow;
-    }
+    } // if
   } // row(int)
 
   /**
