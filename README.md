@@ -5,13 +5,13 @@ Explorations with the creation, composition, and mutation of blocks of ASCII tex
 **Authors**
 
 * Samuel A. Rebelsky (starter code).
-* Your Name Here
-* Your name Here
+*Jafar Jarrar
+*Grant Sackmann
 
 **Notes for the reader**
 
-PLEASE ADD NOTES FOR SOMEONE NOT FAMILIAR WITH THE PROJECT.
+This project was an application of java inheritance and java interfaces using ASCII character text object generations.
 
 ---
 
-This code may be found at <https://github.com/YOUR_USERNAME/YOU_REPO>. The original project can be found at <https://github.com/Grinnell-CSC207/mp-blocks-maven>.
+This code may be found at <https://github.com/jafar-j/mp-blocks-maven.git>. The original project can be found at <https://github.com/Grinnell-CSC207/mp-blocks-maven>.
